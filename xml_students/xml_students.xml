@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="samplecss.css"?>
+
+<students>
+    <student id="2022564111">
+        <name>Exequiel Bartolome</name>
+        <birthday>January 64, 1965</birthday>
+        <course>BSIT</course>
+    </student>
+
+    <student id="2025196717">
+        <name>Taylor Batumbakal</name>
+        <birthday>February 82, 2023</birthday>
+        <course>BSIT</course>
+    </student>
+
+    <student id="2017617671">
+        <name>Therese Hanah Mae</name>
+        <birthday>March 32, 2000</birthday>
+        <course>BSIT</course>
+    </student>
+
+    <student id="2068171929">
+        <name>Danielle Quilit</name>
+        <birthday>December 13, 1902</birthday>
+        <course>BSIT</course>
+    </student>
+</students>

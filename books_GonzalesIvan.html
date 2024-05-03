@@ -1,0 +1,157 @@
+<xml id="xmldata" style="display:none;">
+<book_information>
+
+    <book>
+        <title>Harry Potter</title>
+        <author>JK Rowling</author>
+        <isbn>8812479151</isbn>
+        <picture>https://upload.wikimedia.org/wikipedia/en/6/6b/Harry_Potter_and_the_Philosopher%27s_Stone_Book_Cover.jpg</picture>
+    </book>
+    
+
+    <book>
+        <title>Harry Potter and the Chamber of Secrets</title>
+        <author>JK Rowling</author>
+        <isbn>8700021245</isbn>
+        <picture>https://kids.scholastic.com/content/dam/scholastic/kids/content-cards/image/harry-potter/hp-ml-2.png</picture>
+    </book>
+
+    <book>
+        <title>Harry Potter and The Sorcerer's Stone</title>
+        <author>JK Rowling</author>
+        <isbn>751233011</isbn>
+        <picture>https://kids.scholastic.com/content/dam/scholastic/kids/content-cards/image/harry-potter/hp-ml-1.png</picture>
+    </book>
+
+    <book>
+        <title>The Subtle Art of Not Giving a F*ck</title>
+        <author>Mark Manson</author>
+        <isbn>131313113</isbn>
+        <picture>https://cdn.kobo.com/book-images/f68de379-e763-441c-8159-a949ea575237/1200/1200/False/the-subtle-art-of-not-giving-a-f-ck.jpg</picture>    
+    </book>
+
+    <book>
+        <title>Atomic Habits</title>
+        <author>James Clear</author>
+        <isbn>333111111</isbn>
+        <picture>https://cdn.kobo.com/book-images/24463cb4-28ad-48cb-807f-158cf6d11a92/1200/1200/False/atomic-habits-tiny-changes-remarkable-results.jpg</picture>    
+    </book>
+
+    <book>
+        <title>Surrounded by Idiots</title>
+        <author>Thomas Erikson</author>
+        <isbn>88727262626</isbn>
+        <picture>https://media.shortform.com/covers/png/surrounded-by-idiots-cover@8x.png</picture>
+    </book>
+    
+    <book>
+        <title>PCs for Dummies</title>
+        <author>Dan Gookin</author>
+        <isbn>4414144141</isbn>
+        <picture>https://assets.whsmith.co.uk/product-image/large/9781119041771-10-000_1.jpg</picture>    
+    </book>
+  
+    <book>
+        <title>Fleabag: The Scriptures</title>
+        <author>Phoebe Waller-Bridge</author>
+        <isbn>828126161</isbn>
+        <picture>https://cdn.waterstones.com/bookjackets/large/9781/5293/9781529341799.jpg</picture>    
+    </book>
+   
+    <book>
+        <title>Dune</title>
+        <author>Frank Herbert</author>
+        <isbn>751233011</isbn>
+        <picture>https://cdn.kobo.com/book-images/7cdf60e0-c47b-498b-842d-eb8c094ef77e/1200/1200/False/dune-2.jpg</picture>    
+    </book>
+   
+    <book>
+        <title>Nineteen Eighty-Four</title>
+        <author>George Orwell</author>
+        <isbn>751233011</isbn>
+        <picture>https://cdn.kobo.com/book-images/c9472126-7f96-402d-ba57-5ba4c0f4b238/1200/1200/False/nineteen-eighty-four-1984-george.jpg</picture>    
+    </book>
+   
+</book_information>
+</xml>
+<html>
+
+<head>
+    <title>Tesrrrt</title>
+    <script>
+        d = document;
+        function getData(){
+
+           container = d.getElementById("container");
+
+            xml = d.getElementById("xmldata");
+            z = xml.getElementsByTagName("book");
+            
+            var theBody = ("<h1>Sample Fetch Data</h1>Submitted by Ivan Gonzales • BSIT 3DG2");
+
+
+                theBody+=("<table><tr>");
+ 
+                var x = z[1].childNodes;
+
+                for(var i=0; i<x.length; i++){
+                    var y=x[i];
+                    if(y.nodeType==1 ){
+                            theBody+=("<th>"+y.nodeName+"</rd>");
+                        }
+                }
+
+                theBody+=("</tr>");
+            
+
+            for (var k=0 ; k<z.length; k++){
+                var x = z[k].childNodes;
+
+                theBody+=("<tr>");
+                for(var i=0; i<x.length; i++){
+                    var y=x[i];
+                    
+                    if(y.nodeType==1){
+                        theBody+=("<td>");
+                        if(y.nodeName!="PICTURE"){
+                            theBody+=(y.firstChild.nodeValue)
+                        } else{
+                            theBody+=("<img src="+y.firstChild.nodeValue+" height=100px")
+                        }
+                    }
+                    theBody+=("</td>");
+                }
+                theBody+=("</tr>");
+                // theBody+=("--------------<br/>");
+            }
+            theBody+=("</table>");
+
+            container.innerHTML = theBody;
+                
+        }
+    </script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {font-family: "Poppins", sans-serif;  text-align: center; align-items: center; align-content: center;}
+
+table, th, td {
+
+    padding: 10px;
+    align-items: center;
+    align-content: center;
+    align-content: center;
+    
+  }
+
+  th,td{
+    background-color: #FAE3DE;
+  }
+</style>
+</head>
+<body onload="getData();">
+<center>
+    <div id="container" class="cont"></div>
+</center>
+</body>
+    
+</html>

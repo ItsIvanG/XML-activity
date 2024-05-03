@@ -1,0 +1,57 @@
+<xml id="xmldata" style="display:none;">
+    <students>
+        <student id="2010100048">
+            <name>Juan Dela Cruz</name>
+            <birthday>January 25, 1984</birthday>
+            <course>BSIT</course>
+        </student>
+
+        <student id="2010100049">
+            <name>Armando Tiongson</name>
+            <birthday>April 2, 1984</birthday>
+            <course>BSIT</course>
+        </student>
+
+        <student id="2010100048">
+            <name>Oliver Borlongan</name>
+            <birthday>November 25, 1984</birthday>
+            <course>BSIT</course>
+        </student>
+
+        <student id="2010100051">
+            <name>John Ramos</name>
+            <birthday>January 25, 1984</birthday>
+            <course>BSIT</course>
+        </student>
+    </students>
+</xml>
+<head>
+    <title>Test</title>
+    <script>
+        d = document;
+
+        function getData(){
+            container = d.getElementById("container");
+
+            xml = d.getElementById("xmldata");
+            z = xml.getElementsByTagName("student");
+            var theBody =("<h1>Sample Fetch Data</h1> <br><br>");
+            for (var k=0 ; k<z.length; k++){
+                var x = z[k].childNodes;
+                for(var i=0; i<x.length; i++){
+                    var y=x[i];
+                    if(y.nodeType==1){
+                        theBody+=(y.nodeName+"</b>:"+y.firstChild.nodeValue+"<br/>")
+                    }
+                }
+                theBody+=("--------------<br/>");
+                
+                
+            }
+            container.innerHTML = theBody;
+        }
+    </script>
+</head>
+<body onload="getData();" >
+<div id="container"></div>
+</body>
